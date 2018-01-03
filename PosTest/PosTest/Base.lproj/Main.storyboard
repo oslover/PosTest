@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Draw View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DrawViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MO-sH-1C9" customClass="GestureView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOg-rS-Pig">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Record" id="nwg-SK-yv7">
+                                        <connections>
+                                            <action selector="onRecord:" destination="BYZ-38-t0r" id="Sod-Vt-pDE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yt2-8h-Ypo"/>
+                                    <barButtonItem style="plain" systemItem="play" id="na0-ER-DlW">
+                                        <connections>
+                                            <action selector="onPlay:" destination="BYZ-38-t0r" id="iXI-wO-qQm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-yd-vjh">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1MO-sH-1C9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ACh-XN-hih"/>
+                            <constraint firstItem="zOg-rS-Pig" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BDl-ME-aeL"/>
+                            <constraint firstItem="1MO-sH-1C9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HOy-Qf-dJH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zOg-rS-Pig" secondAttribute="bottom" id="ICP-0e-F4i"/>
+                            <constraint firstItem="1MO-sH-1C9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="UwG-RR-ddU"/>
+                            <constraint firstItem="zOg-rS-Pig" firstAttribute="top" secondItem="1MO-sH-1C9" secondAttribute="bottom" id="jwb-EV-hhN"/>
+                            <constraint firstItem="1MO-sH-1C9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mTs-WY-ewh"/>
+                            <constraint firstItem="zOg-rS-Pig" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xxM-Zb-Pu7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UwG-RR-ddU"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="activity" destination="fO0-yd-vjh" id="Zbr-wC-T8d"/>
+                        <outlet property="buttonPlay" destination="na0-ER-DlW" id="gLh-d8-9JG"/>
+                        <outlet property="buttonRecordStop" destination="nwg-SK-yv7" id="aAA-kK-Mty"/>
+                        <outlet property="vwGesture" destination="1MO-sH-1C9" id="c4W-5P-ocA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
